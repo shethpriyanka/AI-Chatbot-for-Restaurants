@@ -1,0 +1,35 @@
+conda create -n rasadev python=3.6 anaconda
+activate rasadev
+python -m pip install --upgrade pip==20.1
+pip install rasa
+pip install rasa-nlu
+pip install django
+pip3 install rasa-x --extra-index-url https://pypi.rasa.com/simple
+pip install rasa_core_sdk
+
+rasa init
+rasa train
+rasa shell
+
+
+rasa run actions & rasa x
+
+django-admin startproject chatbot
+python .\manage.py startapp chat_app
+
+python .\manage.py runserver
+
+rasa run -m models --enable-api --cors "*" --debug
+
+Steps to start:
+
+path in initchat=>rasa run actions
+
+path in initchat=>rasa run -m models --enable-api --cors "*" --debug
+
+path in chatbot=>python .\manage.py runserver
+
+then go to localhost:8000
+
+
+

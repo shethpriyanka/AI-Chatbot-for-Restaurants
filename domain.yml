@@ -1,0 +1,169 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- no_intent:
+    use_entities: true
+- yes_intent:
+    use_entities: true
+- select_city:
+    use_entities: true
+- select_cuisine:
+    use_entities: true
+- select_restaurant:
+    use_entities: true
+entities:
+- location
+- cuisine
+- restaurant
+slots:
+  location:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  cuisine:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  restaurant:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hi There!
+  - text: Hello sir, I am here to help you.
+  - text: Hi there, nice to see you.
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_place_order:
+  - buttons:
+    - payload: yes_intent
+      title: Yes
+    - payload: no_intent
+      title: No
+    text: hello, do you like to place an order.
+  - buttons:
+    - payload: yes_intent
+      title: Yes
+    - payload: no_intent
+      title: No
+    text: Should I take your order sir ?
+  - buttons:
+    - payload: yes_intent
+      title: Yes
+    - payload: no_intent
+      title: No
+    text: Do you like to tell me your order sir ?
+  utter_qus_city:
+  - text: Which city do you stay in ?
+  - text: Tell me your city name.
+  - text: Can you tell me your city ?
+  utter_qus_cuisine:
+  - text: |-
+      Which cuisine you like to have ?
+      - Punjabi
+      - South Indian
+      - Chinese
+      - Italian
+      - Fast Food
+      - Mughlai
+      - North Indian
+      - Rajasthani
+      - Continental
+      - Seafood
+      - Biryani
+      - Burger
+      - Pizza
+      - American
+      - Thai
+  - text: |-
+      What type of food you like to have ?
+      - Punjabi
+      - South Indian
+      - Chinese
+      - Italian
+      - Fast Food
+      - Mughlai
+      - North Indian
+      - Rajasthani
+      - Continental
+      - Seafood
+      - Biryani
+      - Burger
+      - Pizza
+      - American
+      - Thai
+  utter_wait:
+  - text: Checking database.
+  - text: Processing please wait.
+  utter_restaurant:
+  - text: |-
+      Which restaurant you like to have food from ?
+      - A : 
+      - B : 
+      - C : 
+      - D : 
+      - E :
+  - text: |-
+      Here are some of the restaurant near by you ?
+      - A : 
+      - B : 
+      - C : 
+      - D : 
+      - E :
+  utter_thank:
+  - text: The restaurant will contact you soon for confirmation and to let you know the delivery time.  
+  utter_confirm:
+  - buttons:
+    - payload: yes_intent
+      title: Yes
+    - payload: no_intent
+      title: No
+    text: Do you want to confirm this order.
+  - buttons:
+    - payload: yes_intent
+      title: Yes
+    - payload: no_intent
+      title: No
+    text: Do you want to place this order.
+actions:
+- utter_greet
+- utter_place_order
+- utter_wait
+- action_cusine
+- action_city
+- action_restaurant
+- action_menu
+- action_order
+forms: {}
+e2e_actions: []
