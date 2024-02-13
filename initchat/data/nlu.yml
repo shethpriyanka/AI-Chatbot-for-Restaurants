@@ -1,0 +1,158 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: select_restaurant
+  examples: |
+    - [Tea Villa Cafe](restaurant)
+    - [Joey's Pizza](restaurant)
+    - [Cafe Hydro](restaurant)
+    - [The American Joint](restaurant)
+    - [The Fusion Kitchen](restaurant)
+    - [145 Kala Ghoda](restaurant)
+    - [Grandmama's Cafe](restaurant)
+    - [Mumbai Vibe](restaurant)
+    - [The Rolling Pin](restaurant)
+    - [Stacks And Racks](restaurant)
+    - [1,2,3](restaurant)
+    - [1,4,5](restaurant)
+    - [1,9](restaurant)
+    - [1,2](restaurant)
+    - [1,10,15](restaurant)
+    - [The Fusion Kitchen](restaurant)
+    - [1,10,14](restaurant)
+    - [1,10](restaurant)
+- intent: no_intent
+  examples: |
+    - N
+    - no
+    - no_intent
+- intent: yes_intent
+  examples: |
+    - Y
+    - yes
+    - yes_intent
+    - Yes
+- intent: select_city
+  examples: |
+    - [Mumbai](location)
+    - [mumbai](location)
+    - [Agra](location)
+    - [Ahmedabad](location)
+    - [Allahabad](location)
+    - [Amritsar](location)
+    - [Aurangabad](location)
+    - [Bangalore](location)
+    - [Bhopal](location)
+    - [Bhubaneshwar](location)
+    - [Chandigarh](location)
+    - [Chennai](location)
+    - [Coimbatore](location)
+    - [Dehradun](location)
+    - [Faridabad](location)
+    - [Ghaziabad](location)
+    - [Goa](location)
+    - [Gurgaon](location)
+    - [Guwahati](location)
+    - [Hyderabad](location)
+    - [Indore](location)
+    - [Jaipur](location)
+    - [Kanpur](location)
+    - [Kochi](location)
+    - [Lucknow](location)
+    - [Ludhiana](location)
+    - [Mangalore](location)
+    - [Mohali](location)
+    - [Mysore](location)
+    - [Nagpur](location)
+    - [Nashik](location)
+    - [New Delhi](location)
+    - [Noida](location)
+    - [Panchkula](location)
+    - [Patna](location)
+    - [Puducherry](location)
+    - [Pune](location)
+    - [Ranchi](location)
+    - [Secunderabad](location)
+    - [Surat](location)
+    - [Vadodara](location)
+    - [Varanasi](location)
+    - [Vizag](location)
+    - [Jahanpanah](location)
+    - [Europe](location)
+    - [Mumbai](location)
+- intent: select_cuisine
+  examples: |
+    - [Mughlai](cuisine)
+    - [North Indian](cuisine)
+    - [Rajasthani](cuisine)
+    - [Continental](cuisine)
+    - [Seafood](cuisine)
+    - [Chinese](cuisine)
+    - [Biryani](cuisine)
+    - [Burger](cuisine)
+    - [Pizza](cuisine)
+    - [American](cuisine)
+    - [Thai](cuisine)
+    - [punjabi](cuisine)
+    - [south indian](cuisine)
+    - [fast food](cuisine)
+    - [italian](cuisine)
+    - [Punjabi](cuisine)
+    - [Fast Food](cuisine)
+    - [Italian](cuisine)
+    - [Fozzie's Pizzaiolo](restaurant)
+    - [La Pino'z Pizza](restaurant)
+    - [Fast food](cuisine)
+    - [Chinese](cuisine)
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - Waves
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

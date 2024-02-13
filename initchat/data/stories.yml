@@ -1,0 +1,356 @@
+version: "2.0"
+stories:
+- story: Project Main
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+- story: No fallback path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+  - intent: no_intent
+  - action: utter_goodbye
+- story: Yes fallback path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+  - intent: yes_intent
+  - action: utter_qus_city
+  - intent: select_city
+    entities:
+    - location: Mumbai
+  - slot_was_set:
+    - location: Mumbai
+  - action: action_city
+  - action: utter_qus_cuisine
+  - intent: select_cuisine
+    entities:
+    - cuisine: Fast Food
+  - slot_was_set:
+    - cuisine: Fast Food
+  - action: action_cusine
+  - action: utter_wait
+  - action: action_restaurant
+  - intent: select_restaurant
+    entities:
+    - restaurant: Stacks And Racks
+  - slot_was_set:
+    - restaurant: Stacks And Racks
+  - action: action_menu
+  - intent: no_intent
+    entities:
+    - restaurant: 1,2,3
+  - slot_was_set:
+    - restaurant: 1,2,3
+  - action: action_order
+  - action: utter_confirm
+  - intent: yes_intent
+  - action: utter_thank
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: Story from Conversation ID 07ebba45a17c4579ae61fc188d8e1829
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+  - intent: yes_intent
+  - action: utter_qus_city
+  - intent: select_city
+    entities:
+    - location: Mumbai
+  - slot_was_set:
+    - location: Mumbai
+  - action: action_city
+  - action: utter_qus_cuisine
+  - intent: select_cuisine
+    entities:
+    - cuisine: Fast Food
+  - slot_was_set:
+    - cuisine: Fast Food
+  - action: action_cusine
+  - action: utter_wait
+  - action: action_restaurant
+  - intent: select_restaurant
+    entities:
+    - restaurant: 145 Kala Ghoda
+  - slot_was_set:
+    - restaurant: 145 Kala Ghoda
+  - action: action_menu
+  - intent: select_restaurant
+    entities:
+    - restaurant: 1,2,3
+  - slot_was_set:
+    - restaurant: 1,2,3
+  - action: action_order
+  - action: utter_confirm
+  - intent: yes_intent
+  - action: utter_thank
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+  - intent: yes_intent
+  - action: utter_qus_city
+  - intent: select_city
+    entities:
+    - location: Agra
+  - slot_was_set:
+    - location: Agra
+  - action: action_city
+  - action: utter_qus_cuisine
+  - intent: select_cuisine
+    entities:
+    - cuisine: Mughlai
+  - slot_was_set:
+    - cuisine: Mughlai
+  - action: action_cusine
+  - action: utter_wait
+  - action: action_restaurant
+  - intent: select_city
+    entities:
+    - location: Jahanpanah
+  - slot_was_set:
+    - location: Jahanpanah
+  - action: action_menu
+  - intent: select_restaurant
+    entities:
+    - restaurant: 1,4,5
+  - slot_was_set:
+    - restaurant: 1,4,5
+  - action: action_order
+  - action: utter_confirm
+  - intent: yes_intent
+  - action: utter_thank
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+  - intent: no_intent
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+  - intent: yes_intent
+  - action: utter_qus_city
+  - intent: select_city
+    entities:
+    - location: Ahmedabad
+  - slot_was_set:
+    - location: Ahmedabad
+  - action: action_city
+  - action: utter_qus_cuisine
+  - intent: select_cuisine
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_cusine
+  - action: utter_wait
+  - action: action_restaurant
+  - intent: select_cuisine
+    entities:
+    - restaurant: Fozzie's Pizzaiolo
+  - slot_was_set:
+    - restaurant: Fozzie's Pizzaiolo
+  - action: action_menu
+  - intent: select_restaurant
+    entities:
+    - restaurant: 1,9
+  - slot_was_set:
+    - restaurant: 1,9
+  - action: action_order
+  - action: utter_confirm
+  - intent: yes_intent
+  - action: utter_thank
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+  - intent: yes_intent
+  - action: utter_qus_city
+  - intent: select_city
+    entities:
+    - location: Ahmedabad
+  - slot_was_set:
+    - location: Ahmedabad
+  - action: action_city
+  - action: utter_qus_cuisine
+  - intent: select_cuisine
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_cusine
+  - action: utter_wait
+  - action: action_restaurant
+  - intent: select_cuisine
+    entities:
+    - restaurant: La Pino'z Pizza
+  - slot_was_set:
+    - restaurant: La Pino'z Pizza
+  - action: action_menu
+  - intent: select_restaurant
+    entities:
+    - restaurant: 1,2
+  - slot_was_set:
+    - restaurant: 1,2
+  - action: action_order
+  - action: utter_confirm
+  - intent: yes_intent
+  - action: utter_thank
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+  - intent: yes_intent
+  - action: utter_qus_city
+  - intent: select_city
+    entities:
+    - location: Mumbai
+  - slot_was_set:
+    - location: Mumbai
+  - action: action_city
+  - intent: select_cuisine
+    entities:
+    - cuisine: Fast food
+  - slot_was_set:
+    - cuisine: Fast food
+  - action: action_cusine
+  - action: utter_wait
+  - action: action_restaurant
+  - intent: select_restaurant
+    entities:
+    - restaurant: 145 Kala Ghoda
+  - slot_was_set:
+    - restaurant: 145 Kala Ghoda
+  - action: action_menu
+  - intent: select_restaurant
+    entities:
+    - restaurant: 1,10,15
+  - slot_was_set:
+    - restaurant: 1,10,15
+  - action: action_order
+  - action: utter_confirm
+  - intent: yes_intent
+  - action: utter_thank
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+  - intent: yes_intent
+  - action: utter_qus_city
+  - intent: select_city
+    entities:
+    - location: New Delhi
+  - slot_was_set:
+    - location: New Delhi
+  - action: action_city
+  - intent: select_cuisine
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_cusine
+  - action: utter_wait
+  - action: action_restaurant
+  - intent: deny
+  - action: action_menu
+  - intent: select_restaurant
+    entities:
+    - restaurant: 1,10,15
+  - slot_was_set:
+    - restaurant: 1,10,15
+  - action: action_order
+  - action: utter_confirm
+  - intent: yes_intent
+  - action: utter_thank
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_place_order
+  - intent: yes_intent
+  - action: utter_qus_city
+  - intent: select_city
+    entities:
+    - location: Europe
+  - slot_was_set:
+    - location: Europe
+  - action: action_city
+  - intent: yes_intent
+  - action: utter_qus_city
+  - intent: select_city
+    entities:
+    - location: Mumbai
+  - slot_was_set:
+    - location: Mumbai
+  - action: action_city
+  - intent: select_cuisine
+    entities:
+    - cuisine: Chinese
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: action_cusine
+  - action: utter_wait
+  - action: action_restaurant
+  - intent: select_restaurant
+    entities:
+    - restaurant: The Fusion Kitchen
+  - slot_was_set:
+    - restaurant: The Fusion Kitchen
+  - action: action_menu
+  - intent: select_restaurant
+    entities:
+    - restaurant: 1,10
+  - slot_was_set:
+    - restaurant: 1,10
+  - action: action_order
+  - action: utter_confirm
+  - intent: yes_intent
+  - action: utter_thank
+  - action: utter_goodbye
